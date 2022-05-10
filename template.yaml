@@ -3,7 +3,7 @@ kind: Template
 # some metadata about the template itself
 metadata:
   name: v1beta3-demo
-  title: Test Action template
+  title: Microservices Monorepo template
   description: scaffolder v1beta3 template demo
 spec:
   owner: backstage/techdocs-core
@@ -11,14 +11,14 @@ spec:
 
   # these are the steps which are rendered in the frontend with the form input
   parameters:
-    - title: Fill in some steps
+    - title: Fill in the repo name steps
       required:
         - name
       properties:
         name:
           title: Name
           type: string
-          description: Unique name of the component
+          description: Unique name of the repo
           ui:autofocus: true
           ui:options:
             rows: 5
@@ -33,6 +33,18 @@ spec:
           ui:options:
             allowedHosts:
               - github.com
+    - title: Choose the services that you want to integrate
+      required:
+        - services
+      properties:
+        services: 
+          title: services
+          type: "array"
+          items:
+            type: "string"
+            enum: ["foo", 'bar']
+          uniqueItems: true
+
 
   # here's the steps that are executed in series in the scaffolder backend
   steps:
