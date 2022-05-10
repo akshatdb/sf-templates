@@ -42,8 +42,21 @@ spec:
           type: "array"
           items:
             type: "string"
-            enum: ["foo", 'bar']
+            enum:
+              - authentication-service
+              - audit-service
+              - bpmn-service
+              - chat-service
+              - feature-toggle-service
+              - in-mail-service
+              - notification-service
+              - payment-service
+              - reporting-service
+              - scheduler-service
+              - search-service
+              - video-conferencing-service
           uniqueItems: true
+          ui:widget: "checkboxes"
 
 
   # here's the steps that are executed in series in the scaffolder backend
