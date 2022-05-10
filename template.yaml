@@ -65,7 +65,7 @@ spec:
       name: Generate
       action: run:yeoman
       input:
-        namespace: generate
+        namespace: 'sl:scaffold'
         options:
           name: ${{ parameters.name }}
     - id: publish
