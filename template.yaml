@@ -40,6 +40,7 @@ spec:
         services: 
           title: services
           type: "array"
+          ui:widget: "checkboxes"
           items:
             type: "string"
             enum:
@@ -56,7 +57,6 @@ spec:
               - search-service
               - video-conferencing-service
           uniqueItems: true
-          ui:widget: "checkboxes"
 
 
   # here's the steps that are executed in series in the scaffolder backend
