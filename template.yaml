@@ -38,7 +38,7 @@ spec:
         - services
       properties:
         services: 
-          title: services
+          title: Microservices
           type: "array"
           ui:widget: "checkboxes"
           items:
@@ -56,18 +56,36 @@ spec:
               - scheduler-service
               - search-service
               - video-conferencing-service
-          uniqueItems: true
+          uniqueItems: true     
+    - title: Choose the DB Type you would use
+      required:
+        - datasourceType
+      properties:
+        datasourceType:
+          title: Datasource Type
+          type: "array"
+          items:
+            type: "string"
+            enum:
+              - mysql
+              - postgres
+
 
 
   # here's the steps that are executed in series in the scaffolder backend
   steps:
     - id: generate
-      name: Generate
-      action: run:yeoman
+      name: Generate Scaffold
+      action: run:scaffold
       input:
-        namespace: 'sl:scaffold'
-        options:
-          name: ${{ parameters.name }}
+        name: ${{ parameters.name }}
+    - id: services
+      name: Add Services
+      action: run:microservice
+      input:
+        services: ${{ parameters.services }}
+        repo: ${{ parameters.repoUrl }}
+        datasourceType: ${{ parameters.datasourceType }}
     - id: publish
       name: Publish
       action: publish:github
