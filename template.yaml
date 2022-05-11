@@ -22,6 +22,17 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
+    - title: Choose a location
+      required:
+        - repoUrl
+      properties:
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
     - title: Choose the services that you want to integrate
       required:
         - services
@@ -80,6 +91,7 @@ spec:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
+
     - id: register
       name: Register
       action: catalog:register
