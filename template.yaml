@@ -63,12 +63,10 @@ spec:
       properties:
         datasourceType:
           title: Datasource Type
-          type: "array"
-          items:
-            type: "string"
-            enum:
-              - mysql
-              - postgres
+          type: "string"
+          enum:
+            - mysql
+            - postgres
 
 
 
