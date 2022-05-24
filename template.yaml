@@ -64,7 +64,6 @@ spec:
           type: "array"
           items:
             type: "object"
-            required: "name"
             properties:
               name:
                 type: "string"
@@ -75,7 +74,6 @@ spec:
           type: "array"
           items:
             type: "object"
-            required: "name"
             properties:
               name:
                 type: "string"
@@ -86,7 +84,6 @@ spec:
           type: "array"
           items:
             type: "object"
-            required: "name"
             properties:
               name:
                 type: "string"
