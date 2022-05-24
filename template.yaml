@@ -33,7 +33,7 @@ spec:
           ui:options:
             allowedHosts:
               - github.com
-    - title: Choose the services that you want to integrate
+    - title: Choose the sourceloop services that you want to integrate
       required:
         - services
       properties:
@@ -112,12 +112,37 @@ spec:
       input:
         name: ${{ parameters.name }}
     - id: services
-      name: Add Services
+      name: Add Sourceloop Services
       action: run:microservice
       input:
+        sourceloop: true
+        facade: false
         services: ${{ parameters.services }}
         project: ${{ parameters.name }}
         datasourceType: ${{ parameters.datasourceType }}
+    - id: customServices
+      name: Add Custom Services
+      action: run:microservice
+      input:
+        sourceloop: false
+        facade: false
+        services: ${{ parameters.customServices }}
+        project: ${{ parameters.name }}
+        datasourceType: ${{ parameters.datasourceType }}
+    - id: facades
+      name: Add Facades
+      action: run:microservice
+      input:
+        sourceloop: false
+        facade: true
+        services: ${{ parameters.facades }}
+        project: ${{ parameters.name }}
+        datasourceType: ${{ parameters.datasourceType }}
+    - id: extensions
+      name: Add packages
+      action: run:extension
+      input:
+        extensions: ${{ parameters.packages }}
     - id: publish
       name: Publish
       action: publish:github
