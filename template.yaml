@@ -67,6 +67,8 @@ spec:
             properties:
               name:
                 type: "string"
+          ui:options:
+            orderable: false
     - title: Facades
       properties:
         facades:
@@ -77,6 +79,8 @@ spec:
             properties:
               name:
                 type: "string"
+          ui:options:
+            orderable: false
     - title: Packages 
       properties:
         packages:
