@@ -60,7 +60,7 @@ spec:
     - title: Custom services
       properties:
         customServices:
-          title: Any Custom Microservices
+          title: Custom Microservices
           type: "array"
           items:
             type: "object"
@@ -72,7 +72,7 @@ spec:
     - title: Facades
       properties:
         facades:
-          title: Any Custom facades
+          title: Custom facades
           type: "array"
           items:
             type: "object"
@@ -84,7 +84,7 @@ spec:
     - title: Packages 
       properties:
         packages:
-          title: Any Custom Packages
+          title: Custom Packages
           type: "array"
           items:
             type: "object"
