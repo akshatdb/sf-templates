@@ -56,7 +56,40 @@ spec:
               - scheduler-service
               - search-service
               - video-conferencing-service
-          uniqueItems: true     
+          uniqueItems: true
+    - title: Custom services
+      properties:
+        customServices:
+          title: Any Custom Microservices
+          type: "array"
+          items:
+            type: "object"
+            required: "name"
+            properties:
+              name:
+                type: "string"
+    - title: Facades
+      properties:
+        facades:
+          title: Any Custom facades
+          type: "array"
+          items:
+            type: "object"
+            required: "name"
+            properties:
+              name:
+                type: "string"
+    - title: Packages 
+      properties:
+        packages:
+          title: Any Custom Packages
+          type: "array"
+          items:
+            type: "object"
+            required: "name"
+            properties:
+              name:
+                type: "string"
     - title: Choose the DB Type you would use
       required:
         - datasourceType
