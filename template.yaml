@@ -116,7 +116,7 @@ spec:
       action: run:scaffold
       input:
         name: ${{ parameters.name }}
-        issuePrefx: ${{ parameters.issuePrefix }}
+        issuePrefix: ${{ parameters.issuePrefix }}
     - id: services
       name: Add Sourceloop Services
       if: ${{parameters.services}}
