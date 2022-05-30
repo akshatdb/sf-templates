@@ -99,6 +99,13 @@ spec:
           enum:
             - mysql
             - postgres
+    - title: Issue prefix
+      required:
+        - issuePrefix
+      properties:
+        issuePrefix:
+          title: Prefix to be used for issues
+          type: "string"
 
 
 
@@ -109,6 +116,7 @@ spec:
       action: run:scaffold
       input:
         name: ${{ parameters.name }}
+        issuePrefx: ${{ parameters.issuePrefix }}
     - id: services
       name: Add Sourceloop Services
       if: ${{parameters.services}}
