@@ -2,9 +2,14 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 # some metadata about the template itself
 metadata:
-  name: v1beta3-demo
+  name: microservices-monorepo-template
   title: Microservices Monorepo template
-  description: scaffolder v1beta3 template demo
+  description: A Template to setup a sourceloop based monorepo on Github
+  tags:
+    - sourceloop
+    - loopback4
+    - backend
+    - monorepo
 spec:
   owner: backstage/techdocs-core
   type: service
