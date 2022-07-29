@@ -27,10 +27,22 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
-    - title: Choose a location
+        description:
+          title: Description
+          type: string
+          description: Help others understand what this project is for.
+    - title: Choose a location and owner
       required:
         - repoUrl
       properties:
+        owner:
+          title: Owner
+          type: string
+          description: Owner of the component
+          ui:field: OwnerPicker
+          ui:options:
+            allowedKinds:
+              - User
         repoUrl:
           title: Repository Location
           type: string
@@ -122,6 +134,8 @@ spec:
       input:
         name: ${{ parameters.name }}
         issuePrefix: ${{ parameters.issuePrefix }}
+        owner: ${{ parameters.owner }}
+        description: ${{ parameters.description }}
     - id: services
       name: Add Sourceloop Services
       if: ${{parameters.services}}
