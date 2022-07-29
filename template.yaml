@@ -186,6 +186,7 @@ spec:
       input:
         repoContentsUrl: ${{ steps.publish.output.repoContentsUrl }}
         catalogInfoPath: "/catalog-info.yml"
+        optional: true
 
   output:
     remoteUrl: ${{ steps.publish.output.remoteUrl }}
