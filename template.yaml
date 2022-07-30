@@ -18,7 +18,7 @@ spec:
   parameters:
     - title: Fill in the repo name steps
       required:
-        - name
+        - Project Details
       properties:
         name:
           title: Name
@@ -31,18 +31,6 @@ spec:
           title: Description
           type: string
           description: Help others understand what this project is for.
-    - title: Choose a location and owner
-      required:
-        - repoUrl
-      properties:
-        owner:
-          title: Owner
-          type: string
-          description: Owner of the component
-          ui:field: OwnerPicker
-          ui:options:
-            allowedKinds:
-              - User
         repoUrl:
           title: Repository Location
           type: string
@@ -50,6 +38,7 @@ spec:
           ui:options:
             allowedHosts:
               - github.com
+
     - title: Choose the sourceloop services that you want to integrate
       properties:
         services: 
