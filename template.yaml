@@ -16,9 +16,11 @@ spec:
 
   # these are the steps which are rendered in the frontend with the form input
   parameters:
-    - title: Fill in the repo name steps
+    - title: Fill in the project and repo details
       required:
-        - Project Details
+        - name
+        - description
+        - repoUrl
       properties:
         name:
           title: Name
