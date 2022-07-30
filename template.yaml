@@ -125,7 +125,7 @@ spec:
       input:
         name: ${{ parameters.name }}
         issuePrefix: ${{ parameters.issuePrefix }}
-        repoUrl: ${{ parameters.repoUrl }}
+        repoUrl: ${{ parameters.repoUrl | parseRepoUrl }}
         description: ${{ parameters.description }}
     - id: services
       name: Add Sourceloop Services
