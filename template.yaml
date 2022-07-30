@@ -125,7 +125,7 @@ spec:
       input:
         name: ${{ parameters.name }}
         issuePrefix: ${{ parameters.issuePrefix }}
-        owner: ${{ parameters.owner }}
+        owner: ${{ parameters.repoUrl.owner }}
         description: ${{ parameters.description }}
     - id: services
       name: Add Sourceloop Services
