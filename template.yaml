@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 # some metadata about the template itself
 metadata:
-  name: microservices-monorepo-template-Sunny
+  name: microservices-monorepo-template-by-SUNNY
   title: Microservices Monorepo Template
   description: A Template to setup a sourceloop based monorepo on Github
   tags:
@@ -43,12 +43,12 @@ spec:
 
     - title: Choose the sourceloop services that you want to integrate
       properties:
-        services: 
+        services:
           title: Microservices
-          type: "array"
-          ui:widget: "checkboxes"
+          type: 'array'
+          ui:widget: 'checkboxes'
           items:
-            type: "string"
+            type: 'string'
             enum:
               - authentication-service
               - audit-service
@@ -63,47 +63,53 @@ spec:
               - search-service
               - video-conferencing-service
           uniqueItems: true
+    - title: Include CDK
+      properties:
+        cdk:
+          title: CDK
+          type: boolean
+          default: false
     - title: Custom services
       properties:
         customServices:
           title: Custom Microservices
-          type: "array"
+          type: 'array'
           items:
-            type: "object"
+            type: 'object'
             properties:
               name:
-                type: "string"
+                type: 'string'
           ui:options:
             orderable: false
     - title: Facades
       properties:
         facades:
           title: Custom facades
-          type: "array"
+          type: 'array'
           items:
-            type: "object"
+            type: 'object'
             properties:
               name:
-                type: "string"
+                type: 'string'
           ui:options:
             orderable: false
-    - title: Packages 
+    - title: Packages
       properties:
         packages:
           title: Custom Packages
-          type: "array"
+          type: 'array'
           items:
-            type: "object"
+            type: 'object'
             properties:
               name:
-                type: "string"
+                type: 'string'
     - title: Choose the DB Type you would use
       required:
         - datasourceType
       properties:
         datasourceType:
           title: Datasource Type
-          type: "string"
+          type: 'string'
           enum:
             - mysql
             - postgres
@@ -113,9 +119,7 @@ spec:
       properties:
         issuePrefix:
           title: Prefix to be used for issues
-          type: "string"
-
-
+          type: 'string'
 
   # here's the steps that are executed in series in the scaffolder backend
   steps:
@@ -170,13 +174,13 @@ spec:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
-        
+
     - id: register
       name: Register
       action: catalog:register
       input:
         repoContentsUrl: ${{ steps.publish.output.repoContentsUrl }}
-        catalogInfoPath: "/catalog-info.yml"
+        catalogInfoPath: '/catalog-info.yml'
         optional: true
 
   output:
