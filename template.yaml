@@ -68,7 +68,6 @@ spec:
         cdk:
           title: CDK
           type: boolean
-          default: false
     - title: Custom services
       properties:
         customServices:
