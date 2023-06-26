@@ -3,7 +3,7 @@ kind: Template
 # some metadata about the template itself
 metadata:
   name: microservices-monorepo-template-by-SUNNY
-  title: Microservices Monorepo Template-by-SUNNY
+  title: Microservices Monorepo Template by SUNNY
   description: A Template to setup a sourceloop based monorepo on Github
   tags:
     - sourceloop
