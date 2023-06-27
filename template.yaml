@@ -68,6 +68,7 @@ spec:
         cdk:
           title: CDK
           type: boolean
+          ui:widget: 'checkboxes'
     - title: Custom services
       properties:
         customServices:
