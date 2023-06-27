@@ -68,7 +68,7 @@ spec:
         cdk:
           title: CDK
           type: boolean
-          ui:widget: 'checkboxes'
+          ui:widget: 'radio'
     - title: Custom services
       properties:
         customServices:
