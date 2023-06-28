@@ -138,6 +138,7 @@ spec:
       input:
         sourceloop: true
         facade: false
+        cdk: ${{parameters.cdk}}
         services: ${{ parameters.services }}
         project: ${{ parameters.name }}
         datasourceType: ${{ parameters.datasourceType }}
