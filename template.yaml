@@ -64,6 +64,8 @@ spec:
               - video-conferencing-service
           uniqueItems: true
     - title: Include CDK
+      required:
+        - cdk
       properties:
         cdk:
           title: CDK
