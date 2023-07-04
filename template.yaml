@@ -63,16 +63,16 @@ spec:
               - search-service
               - video-conferencing-service
           uniqueItems: true
-    dependencies:
-      services:
-        oneOf:
-          - properties:
-              services:
-                enum:
-                  - authentication-service
-              icdk:
-                type: boolean
-                default: false
+      dependencies:
+        services:
+          oneOf:
+            - properties:
+                services:
+                  enum:
+                    - authentication-service
+                icdk:
+                  type: boolean
+                  default: false
     - title: Include CDK
       required:
         - cdk
