@@ -3,7 +3,7 @@ kind: Template
 # some metadata about the template itself
 metadata:
   name: microservices-monorepo-template-by-SUNNY
-  title: Microservices Monorepo Template by SUNNY TYAGI
+  title: Microservices Monorepo Template by SUNNY TYAGI JI
   description: A Template to setup a sourceloop based monorepo on Github
   tags:
     - sourceloop
@@ -63,23 +63,25 @@ spec:
               - search-service
               - video-conferencing-service
           uniqueItems: true
-      dependencies:
-        services:
-          oneOf:
-            - properties:
-                services:
-                ['authentication-service']
-                icdk:
-                  type: boolean
-                  default: false
+      allOf:
+        - if:
+            properties:
+              services:
+                type: 'array'
+                items:
+                  enum:
+                    - authentication-service
+          then:
+            properties:
+              icdk:
+                title: CDK
+                type: boolean
+                default: false
     - title: Include CDK
-      required:
-        - cdk
       properties:
         cdk:
           title: CDK
           type: boolean
-          ui:widget: 'radio'
     - title: Custom services
       properties:
         customServices:
