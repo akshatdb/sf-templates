@@ -3,7 +3,7 @@ kind: Template
 # some metadata about the template itself
 metadata:
   name: microservices-monorepo-template-by-SUNNY
-  title: Microservices Monorepo Template by SUNNY TYAGI
+  title: Microservices Monorepo Template by SUNNY TYAGI JI
   description: A Template to setup a sourceloop based monorepo on Github
   tags:
     - sourceloop
@@ -66,9 +66,10 @@ spec:
         then:
           properties:
             arcCdk:
-              title: Arc Cdk
-              type: boolean
-              default: false
+              type: string
+              enum:
+                - yes
+                - no
           required:
           - arcCdk
     # - title: Choose the sourceloop services that you want to integrate
