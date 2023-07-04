@@ -3,7 +3,7 @@ kind: Template
 # some metadata about the template itself
 metadata:
   name: microservices-monorepo-template-by-SUNNY
-  title: Microservices Monorepo Template by SUNNY TYAGI JI
+  title: Microservices Monorepo Template by SUNNY TYAGI
   description: A Template to setup a sourceloop based monorepo on Github
   tags:
     - sourceloop
@@ -40,43 +40,71 @@ spec:
           ui:options:
             allowedHosts:
               - github.com
-
-    - title: Choose the sourceloop services that you want to integrate
+    - title: choose the sourceloop service that you want to integrate
+      type: object
       properties:
         services:
-          title: Microservices
-          type: 'array'
-          ui:widget: 'checkboxes'
-          items:
-            type: 'string'
-            enum:
-              - authentication-service
-              - audit-service
-              - bpmn-service
-              - chat-service
-              - feature-toggle-service
-              - in-mail-service
-              - notification-service
-              - payment-service
-              - reporting-service
-              - scheduler-service
-              - search-service
-              - video-conferencing-service
-          uniqueItems: true
+          type: 'string'
+          enum:
+            - authentication-service
+            - audit-service
+            - bpmn-service
+            - chat-service
+            - feature-toggle-service
+            - in-mail-service
+            - notification-service
+            - payment-service
+            - reporting-service
+            - scheduler-service
+            - search-service
+            - video-conferencing-service
       allOf:
         - if:
             properties:
               services:
-                type: 'array'
-                items:
-                  enum:
-                    - authentication-service
+                const: authentication-service
           then:
             properties:
-              icdk:
-                title: CDK
+              arcCdk:
+                title: Arc Cdk
                 type: boolean
                 default: false
+    # - title: Choose the sourceloop services that you want to integrate
+    #   properties:
+    #     services:
+    #       title: Microservices
+    #       type: 'array'
+    #       ui:widget: 'checkboxes'
+    #       items:
+    #         type: 'string'
+    #         enum:
+    #           - authentication-service
+    #           - audit-service
+    #           - bpmn-service
+    #           - chat-service
+    #           - feature-toggle-service
+    #           - in-mail-service
+    #           - notification-service
+    #           - payment-service
+    #           - reporting-service
+    #           - scheduler-service
+    #           - search-service
+    #           - video-conferencing-service
+    #       uniqueItems: true
+    #   allOf:
+    #     - if:
+    #         properties:
+    #           services:
+    #             type: 'array'
+    #             items:
+    #               enum:
+    #                 - authentication-service
+    #       then:
+    #         properties:
+    #           icdk:
+    #             title: iCDK
+    #             type: boolean
+    #             default: false
     - title: Include CDK
       properties:
         cdk:
