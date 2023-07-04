@@ -68,8 +68,7 @@ spec:
           oneOf:
             - properties:
                 services:
-                  enum:
-                    - authentication-service
+                ['authentication-service']
                 icdk:
                   type: boolean
                   default: false
